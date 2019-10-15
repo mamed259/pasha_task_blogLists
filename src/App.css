@@ -1,15 +1,27 @@
+body{
+  background-color: rgba(108,162,205,.3);
+}
+
 .user-list{
   margin: 50px auto;
   display: table;
   padding: 0;
   width: 1000px;
+}
+
+.about-post{
+  margin: 50px auto;
+  display: table;
+  width: 1000px;
+  padding: 30px;
+  border: 1px solid rgba(108,162,205,.5);
 
 }
 
 .user-list li{
   list-style-type: none;
   margin-bottom: 20px;
-  padding: 30px;
+  border: 1px solid rgba(108,162,205,.5);
 }
 
 .user-list li:hover{
@@ -21,4 +33,88 @@
 .user-list li h2{
   margin-top: 0;
   margin-bottom: 5px;
+}
+
+.user-list li a{
+  padding: 30px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.router-list{
+  display: table;
+  padding: 0;
+  margin: 20px auto;
+}
+
+.router-list li{
+  list-style-type: none;
+  display: inline-block;
+  margin: 20px;
+}
+
+.router-list li .nav-link{
+  height: 40px;
+  font-size: 18px;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #55A9F2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.add-form{
+  width: 300px;
+  display: table;
+  margin: 100px auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+
+}
+
+.add-form button{
+  height: 48px;
+  font-size: 18px;
+  color: #ffffff;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #55A9F2;
+  font-weight: bold;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.add-form button:focus{
+  outline: none;
+}
+
+.add-form .form-group input:focus{
+   outline: none;
+ }
+
+.add-form .form-group{
+  margin-bottom: 15px;
+}
+
+.add-form .form-group label{
+  font-size: 16px;
+  color: #000000;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+.add-form .form-group input{
+  color: #000;
+  font-size: 16px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  width: 100%;
 }

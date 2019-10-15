@@ -4,7 +4,11 @@ import axios from 'axios';
 export default class PersonList extends Component {
     state = {
         title: '',
-        text: ''
+        text: '',
+        status: false,
+        loading: false,
+        hasErrorTitle: false,
+        hasErrorText: false
     };
 
     handleChange = event => {
@@ -19,27 +23,34 @@ export default class PersonList extends Component {
             text: this.state.text
         };
 
-        axios.post(`https://jsonplaceholder.typicode.com/users`, { user })
+        this.setState({ loading: true })
+        axios.post(`https://jsonplaceholder.typicode.com/posts`, user)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 console.log(res.data);
+                this.setState({ loading: false })
+            })
+            .catch(err => {
+                console.warn(err);
+                this.setState({ loading: false })
             })
     };
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form className="add-form" onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label>Title:</label>
-                        <input type="text" name="title" onChange={this.handleChange} />
+                        <label>Title</label>
+                        <input type="text" placeholder="Add title..." name="title" onChange={this.handleChange} required/>
                     </div>
                     <div className="form-group">
-                        <label>Text:</label>
-                        <input type="text" name="text" onChange={this.handleChange} />
+                        <label>Text</label>
+                        <input type="text" placeholder="Add text..." name="text" onChange={this.handleChange} required/>
                     </div>
-                    <button type="submit">Add</button>
+                    <button type="submit">Submit</button>
                 </form>
+
             </div>
         )
     }
