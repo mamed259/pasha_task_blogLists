@@ -14,7 +14,9 @@ export class App extends Component {
               <li>
                 <Link to={'/'} className="nav-link">List</Link>
               </li>
-              <li><Link to={'/add-post'} className="nav-link">Add Post</Link></li>
+              <li>
+                <Link to={'/add-post'} className="nav-link">Add Post</Link>
+              </li>
             </ul>
 
             <Switch>
